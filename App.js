@@ -7,31 +7,22 @@
  */
 
 import React, {useState} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
-  TextInput,
-  Text,
-} from 'react-native';
+import {StyleSheet, TextInput, Text, View} from 'react-native';
 
 const App = () => {
   const [text, setText] = useState('');
 
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Text>Normal</Text>
-        <TextInput value={text} onChangeText={(value) => setText(value)} />
-        <Text>Styles</Text>
-        <TextInput
-          style={styles.textInputStyled}
-          value={text}
-          onChangeText={(value) => setText(value)}
-        />
-      </SafeAreaView>
-    </>
+    <View>
+      <Text>Normal</Text>
+      <TextInput value={text} onChangeText={(value) => setText(value)} />
+      <Text>Styles</Text>
+      <TextInput
+        style={styles.textInputStyled}
+        value={text}
+        onChangeText={(value) => setText(value)}
+      />
+    </View>
   );
 };
 
